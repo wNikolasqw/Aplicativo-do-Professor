@@ -1,7 +1,8 @@
 #====APP DO PROFESSOR====#
-media_aprovacao = 7
+media_aprovacao = 6
 alunos = []
 
+#Função para adicionar um aluno à lista de alunos e suas respectivas notas
 def adicionar_aluno():
     nomeAluno = input('Qual aluno é?: ')
     notas = []
@@ -22,8 +23,13 @@ def media():
 
 def editar():
     print(alunos)
-    menu2 = ['1- Editar nome', '2- Editar notas', '3- Voltar']
-pass
+    menu2 = {1:"Editar nome", 2: "Editar notas", 3:"Voltar"}
+    print(menu2)
+    escolha2 = int(input("Seleciona uma opção: "))
+    if escolha2 == 1:
+       editar_aluno = input("Qual aluno você deseja editar?: ")
+       pass
+
 
 while True:
     menu = ['1- Adicionar aluno: ', 
@@ -50,3 +56,7 @@ while True:
 
     if escolha == 3:
         editar()
+
+    if escolha == 5:
+        print("Obrigado por selecionar nosso gerenciador de notas! Até a próxima.")
+        break
