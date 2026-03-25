@@ -11,31 +11,36 @@ def adicionar_aluno():
         notas.append(notasAluno)
     aluno = {'Nome': nomeAluno, 'Notas': notas}
     alunos.append(aluno)
-    print(alunos) 
+    print(alunos)
     pass
 
 def media():
-    global media_aprovacao 
+    global media_aprovacao
     nova_media = float(input('Insira a nova média de aprovação: '))
     media_aprovacao = nova_media
     print(f'A nova média de aprovação dos alunos é = {media_aprovacao}')
     pass
 
 def editar():
-    print(alunos)
     menu2 = {1:"Editar nome", 2: "Editar notas", 3:"Voltar"}
     print(menu2)
     escolha2 = int(input("Seleciona uma opção: "))
     if escolha2 == 1:
-       editar_aluno = input("Qual aluno você deseja editar?: ")
-       pass
+        for i in alunos:
+            print(i['Nome'])
+        editar_aluno = input("Qual aluno você deseja editar?: ")
+        for i in alunos:
+            if editar_aluno == i['Nome']:
+                novoNome = input(f"Insira um nome novo para o aluno {i['Nome']}: ")
+                i['Nome'] = novoNome
+
 
 
 while True:
-    menu = ['1- Adicionar aluno: ', 
-            '2- Definir média de aprovação: ', 
-            '3- Editar aluno: ', 
-            '4- Calcular médias: ',
+    menu = ['1- Adicionar aluno; ',
+            '2- Definir média de aprovação; ',
+            '3- Editar aluno; ',
+            '4- Calcular médias; ',
             '5- Sair do aplicativo']
 
 
